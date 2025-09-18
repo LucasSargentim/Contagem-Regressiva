@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #ffffff;
+  --background-start: #009245; /* Green from Paraná flag */
+  --background-end: #001e50; /* Blue from Paraná flag */
+  --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, var(--background-start), var(--background-end));
+  color: var(--primary-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+  max-width: 90%;
+  width: 700px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.school-days-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-number {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 1;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 1rem;
+  border-radius: 10px;
+  min-width: 100px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.countdown-item:not(:last-child) .countdown-number {
+    animation: none;
+}
+
+.countdown-label {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.footer-text {
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.end-message {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .countdown-timer {
+    gap: 1rem;
+  }
+  .countdown-number {
+    font-size: 2.5rem;
+    padding: 0.8rem;
+    min-width: 70px;
+  }
+  .countdown-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .countdown-timer {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .countdown-item {
+      width: calc(50% - 1rem);
+      margin-bottom: 1rem;
+  }
+  .school-days-container .countdown-item {
+      width: auto;
+      margin-bottom: 0;
+  }
+  .countdown-number {
+    font-size: 2.8rem;
+  }
+}
